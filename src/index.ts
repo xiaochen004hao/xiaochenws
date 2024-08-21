@@ -29,7 +29,7 @@ const server = Bun.serve<User>({
 		},
 		close(ws) {
 			if (!ws.data.room) return
-			server.publish(ws.data.room, `${ws.data.username} has left the room`)
+			server.publish(ws.data.room, `系统提示: ${ws.data.username} 退出了频道`)
 		},
 	},
 })
